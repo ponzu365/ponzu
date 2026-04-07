@@ -3,616 +3,424 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🐠 海水水槽リンク集</title>
+  <title>海水水槽の愛用アイテム</title>
+  <meta name="description" content="30cmオーバーフロー水槽8ヶ月稼働中。実際に使って良かった機材・用品をまとめました。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --ocean-deep: #0a1628;
-      --ocean-mid: #0d2b4e;
-      --ocean-light: #1a4a7a;
-      --cyan: #00c9e8;
-      --teal: #00e5c8;
-      --coral: #ff6b6b;
-      --sand: #f5e6c8;
-      --white: #ffffff;
-      --card-bg: rgba(255, 255, 255, 0.07);
-      --card-border: rgba(0, 201, 232, 0.25);
-    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root {
+      --bg: #f8fbfd;
+      --surface: #ffffff;
+      --border: rgba(0, 80, 120, 0.12);
+      --border-hover: rgba(0, 80, 120, 0.28);
+      --text-primary: #0d2b38;
+      --text-secondary: #4a7080;
+      --text-muted: #8aacb8;
+      --accent: #1b8fb5;
+      --accent-light: #e0f4fb;
     }
 
     body {
-      background: var(--ocean-deep);
-      color: var(--white);
-      font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
       min-height: 100vh;
-      overflow-x: hidden;
     }
 
-    /* 背景アニメーション */
-    .bg-animation {
+    body::before {
+      content: '';
       position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      z-index: 0;
-      overflow: hidden;
-      pointer-events: none;
-    }
-
-    .bubble {
-      position: absolute;
+      top: -40%;
+      left: -20%;
+      width: 80%;
+      height: 80%;
       border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, rgba(0, 201, 232, 0.3), rgba(0, 229, 200, 0.05));
-      animation: rise linear infinite;
-    }
-
-    @keyframes rise {
-      0%   { transform: translateY(110vh) scale(0.5); opacity: 0; }
-      10%  { opacity: 0.6; }
-      90%  { opacity: 0.3; }
-      100% { transform: translateY(-20px) scale(1); opacity: 0; }
-    }
-
-    .wave {
-      position: fixed;
-      bottom: 0; left: 0;
-      width: 200%;
-      height: 120px;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120'%3E%3Cpath fill='rgba(0,201,232,0.06)' d='M0,60 C360,120 1080,0 1440,60 L1440,120 L0,120 Z'/%3E%3C/svg%3E") repeat-x;
-      animation: wave 8s linear infinite;
+      background: radial-gradient(circle, rgba(27,143,181,0.07) 0%, transparent 70%);
       pointer-events: none;
       z-index: 0;
     }
 
-    .wave2 {
-      bottom: 20px;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120'%3E%3Cpath fill='rgba(0,229,200,0.04)' d='M0,80 C480,20 960,120 1440,40 L1440,120 L0,120 Z'/%3E%3C/svg%3E") repeat-x;
-      animation: wave 12s linear infinite reverse;
-    }
-
-    @keyframes wave {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    /* メインコンテンツ */
-    .container {
+    .wrap {
+      max-width: 440px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
       position: relative;
       z-index: 1;
-      max-width: 480px;
-      margin: 0 auto;
-      padding: 0 16px 100px;
     }
 
     /* ヘッダー */
-    header {
+    .hero {
       text-align: center;
-      padding: 40px 0 28px;
+      padding: 24px 0 32px;
     }
 
-    .avatar {
-      width: 80px;
-      height: 80px;
+    .icon-wrap {
+      width: 76px;
+      height: 76px;
+      margin: 0 auto 18px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--cyan), var(--teal));
+      background: linear-gradient(145deg, #0e6e8c, #0a3d52);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 38px;
-      margin: 0 auto 16px;
-      box-shadow: 0 0 30px rgba(0, 201, 232, 0.5);
-      animation: glow 3s ease-in-out infinite;
+      position: relative;
+      box-shadow: 0 8px 32px rgba(14,110,140,0.28);
     }
 
-    @keyframes glow {
-      0%, 100% { box-shadow: 0 0 30px rgba(0, 201, 232, 0.5); }
-      50%       { box-shadow: 0 0 50px rgba(0, 229, 200, 0.7); }
+    .icon-ring {
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(100,210,255,0.3);
+      animation: pulse 2s ease-in-out infinite;
     }
 
-    header h1 {
-      font-size: 20px;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      background: linear-gradient(90deg, var(--cyan), var(--teal));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+    .icon-ring-2 {
+      inset: -11px;
+      border-color: rgba(100,210,255,0.15);
+      animation-delay: 0.5s;
     }
 
-    header p {
-      font-size: 13px;
-      color: rgba(255,255,255,0.6);
-      margin-top: 6px;
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.08); opacity: 1; }
     }
 
-    /* アフィリエイト表示 */
-    .affiliate-notice {
-      background: rgba(255, 107, 107, 0.12);
-      border: 1px solid rgba(255, 107, 107, 0.3);
-      border-radius: 10px;
-      padding: 10px 14px;
-      font-size: 11px;
-      color: rgba(255,255,255,0.65);
-      margin-bottom: 28px;
-      line-height: 1.6;
+    .hero-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 24px;
+      line-height: 1.25;
+      color: var(--text-primary);
+      margin-bottom: 8px;
     }
 
-    .affiliate-notice span {
-      color: var(--coral);
-      font-weight: 600;
+    .hero-title em {
+      font-style: italic;
+      color: var(--accent);
     }
 
-    /* カテゴリラベル */
-    .category-label {
+    .hero-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 300;
+      letter-spacing: 0.04em;
+    }
+
+    .wave-dots {
       display: flex;
-      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin: 0 0 28px;
+    }
+
+    .dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: 0.35;
+      animation: wavedot 1.6s ease-in-out infinite;
+    }
+    .dot:nth-child(2) { animation-delay: 0.15s; }
+    .dot:nth-child(3) { animation-delay: 0.3s; }
+    .dot:nth-child(4) { animation-delay: 0.45s; }
+    .dot:nth-child(5) { animation-delay: 0.6s; }
+
+    @keyframes wavedot {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); opacity: 0.7; }
+    }
+
+    /* セクション */
+    .section-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      padding-left: 2px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 10px;
-      margin: 28px 0 14px;
-    }
-
-    .category-label .icon {
-      font-size: 20px;
-    }
-
-    .category-label h2 {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--cyan);
-      letter-spacing: 0.05em;
-    }
-
-    .category-label::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: linear-gradient(90deg, rgba(0,201,232,0.4), transparent);
+      margin-bottom: 24px;
     }
 
     /* カード */
     .card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
+      background: var(--surface);
+      border: 0.5px solid var(--border);
       border-radius: 16px;
-      padding: 16px;
-      margin-bottom: 14px;
-      backdrop-filter: blur(10px);
-      transition: transform 0.2s, box-shadow 0.2s;
+      padding: 14px 14px 28px;
+      text-decoration: none;
+      display: block;
+      cursor: pointer;
+      transition: border-color 0.18s, transform 0.18s, box-shadow 0.18s;
+      position: relative;
+      overflow: hidden;
     }
 
-    .card:active {
-      transform: scale(0.98);
+    .card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(14,110,140,0.1);
     }
 
-    .card-header {
+    .card:active { transform: scale(0.97); }
+
+    .card.wide { grid-column: 1 / -1; padding-bottom: 14px; }
+
+    .card.wide .inner {
       display: flex;
       align-items: flex-start;
       gap: 12px;
-      margin-bottom: 12px;
     }
 
-    .card-emoji {
-      font-size: 28px;
-      line-height: 1;
+    .card-icon-box {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--accent-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-shrink: 0;
     }
 
-    .card-info h3 {
-      font-size: 14px;
-      font-weight: 700;
+    /* タグ */
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+    }
+
+    .tag-amazon  { background: #fff3e0; color: #b36000; }
+    .tag-rakuten { background: #fce8e8; color: #c0392b; }
+    .tag-yahoo   { background: #eef0ff; color: #1a3dbf; }
+    .tag-note    { background: #e8f5ee; color: #1a7a42; }
+
+    .card-name {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-primary);
       line-height: 1.4;
       margin-bottom: 4px;
     }
 
-    .card-info p {
+    .card-desc {
       font-size: 11px;
-      color: rgba(255,255,255,0.55);
-      line-height: 1.5;
+      color: var(--text-secondary);
+      font-weight: 300;
+      line-height: 1.6;
     }
 
-    /* リンクボタン群 */
-    .link-buttons {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      flex: 1;
-      min-width: calc(33% - 6px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
-      padding: 9px 6px;
-      border-radius: 10px;
-      font-size: 12px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: opacity 0.15s, transform 0.15s;
-      letter-spacing: 0.02em;
-    }
-
-    .btn:active {
-      opacity: 0.7;
-      transform: scale(0.96);
-    }
-
-    .btn-amazon {
-      background: linear-gradient(135deg, #ff9900, #e67e00);
-      color: #fff;
-    }
-
-    .btn-rakuten {
-      background: linear-gradient(135deg, #bf0000, #8b0000);
-      color: #fff;
-    }
-
-    .btn-yahoo {
-      background: linear-gradient(135deg, #ff0033, #cc0029);
-      color: #fff;
-    }
-
-    .btn-note {
-      background: linear-gradient(135deg, var(--cyan), var(--teal));
-      color: var(--ocean-deep);
-      font-weight: 800;
-      flex: 1;
-      min-width: 100%;
-    }
-
-    .btn-logo {
-      font-size: 10px;
-      font-weight: 900;
-    }
-
-    /* noteカード専用 */
-    .note-card {
-      border-color: rgba(0, 229, 200, 0.3);
-    }
-
-    .note-badge {
-      display: inline-block;
-      background: linear-gradient(90deg, var(--cyan), var(--teal));
-      color: var(--ocean-deep);
-      font-size: 9px;
-      font-weight: 800;
-      padding: 2px 8px;
-      border-radius: 20px;
-      margin-bottom: 4px;
+    .arrow {
+      position: absolute;
+      bottom: 12px;
+      right: 13px;
+      font-size: 13px;
+      color: var(--text-muted);
     }
 
     /* フッター */
-    footer {
+    .footer {
       text-align: center;
-      padding: 20px 0;
-      font-size: 11px;
-      color: rgba(255,255,255,0.3);
-      position: relative;
-      z-index: 1;
+      font-size: 10px;
+      color: var(--text-muted);
+      font-weight: 300;
+      padding-top: 20px;
+      border-top: 0.5px solid var(--border);
+      line-height: 2;
     }
   </style>
 </head>
 <body>
+<div class="wrap">
 
-  <!-- 背景エフェクト -->
-  <div class="bg-animation" id="bubbles"></div>
-  <div class="wave"></div>
-  <div class="wave wave2"></div>
-
-  <div class="container">
-
-    <!-- ヘッダー -->
-    <header>
-      <div class="avatar">🐠</div>
-      <h1>海水水槽 おすすめリンク集</h1>
-      <p>Marine Aquarium Links</p>
-    </header>
-
-    <!-- アフィリエイト表示 -->
-    <div class="affiliate-notice">
-      <span>【PR・広告表示】</span>このページにはアフィリエイトリンクが含まれています。
-      Amazon・楽天・Yahoo!のリンクから購入いただくと、手数料をいただく場合があります。
-      紹介商品はすべて実際に使用・調査したものです。
+  <!-- ヘッダー -->
+  <div class="hero">
+    <div class="icon-wrap">
+      <div class="icon-ring"></div>
+      <div class="icon-ring icon-ring-2"></div>
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 32 Q18 24 18 18" stroke="#a8e6ff" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M18 22 Q13 19 10 14" stroke="#a8e6ff" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M10 14 Q8 10 9 6"    stroke="#a8e6ff" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M10 14 Q6 13 4 10"   stroke="#a8e6ff" stroke-width="1.3" stroke-linecap="round"/>
+        <path d="M18 20 Q23 17 26 12" stroke="#a8e6ff" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M26 12 Q28 8 27 4"   stroke="#a8e6ff" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M26 12 Q30 11 32 8"  stroke="#a8e6ff" stroke-width="1.3" stroke-linecap="round"/>
+        <path d="M18 18 Q18 13 18 8"  stroke="#a8e6ff" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M18 12 Q15 9 14 5"   stroke="#a8e6ff" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M18 12 Q21 9 22 5"   stroke="#a8e6ff" stroke-width="1.2" stroke-linecap="round"/>
+        <circle cx="9"  cy="6"  r="1.6" fill="#a8e6ff" opacity="0.9"/>
+        <circle cx="4"  cy="10" r="1.3" fill="#a8e6ff" opacity="0.7"/>
+        <circle cx="27" cy="4"  r="1.6" fill="#a8e6ff" opacity="0.9"/>
+        <circle cx="32" cy="8"  r="1.3" fill="#a8e6ff" opacity="0.7"/>
+        <circle cx="18" cy="8"  r="1.6" fill="#a8e6ff" opacity="0.9"/>
+        <circle cx="14" cy="5"  r="1.2" fill="#a8e6ff" opacity="0.7"/>
+        <circle cx="22" cy="5"  r="1.2" fill="#a8e6ff" opacity="0.7"/>
+      </svg>
     </div>
+    <h1 class="hero-title">ぽんずの<em>愛用アイテム</em></h1>
+    <p class="hero-sub">30cm オーバーフロー水槽 ／ 8ヶ月目突入</p>
+  </div>
 
-    <!-- ━━━━━━━━━━━━━━━━━━ -->
-    <!-- カテゴリ1：ろ過・水質管理 -->
-    <!-- ━━━━━━━━━━━━━━━━━━ -->
-    <div class="category-label">
-      <span class="icon">🧪</span>
-      <h2>ろ過・水質管理</h2>
+  <div class="wave-dots">
+    <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    <div class="dot"></div><div class="dot"></div>
+  </div>
+
+  <!-- ろ過・水質管理 -->
+  <div class="section-label">ろ過 · 水質管理</div>
+  <div class="card-grid">
+    <a class="card" href="https://a.r10.to/h8iHey" target="_blank" rel="noopener nofollow">
+      <span class="tag tag-rakuten">楽天</span>
+      <div class="card-name">プロテインスキマー</div>
+      <div class="card-desc">有機物を泡で除去。<br>最初に揃えるべき機材</div>
+      <span class="arrow">↗</span>
+    </a>
+    <a class="card" href="https://amzn.to/4mfcEtB" target="_blank" rel="noopener nofollow">
+      <span class="tag tag-amazon">Amazon</span>
+      <div class="card-name">ライブサンド</div>
+      <div class="card-desc">生きた砂でろ過。<br>立ち上げの要</div>
+      <span class="arrow">↗</span>
+    </a>
+    <a class="card" href="https://a.r10.to/hYf3np" target="_blank" rel="noopener nofollow">
+      <span class="tag tag-rakuten">楽天</span>
+      <div class="card-name">人工海水の素</div>
+      <div class="card-desc">レッドシー愛用</div>
+      <span class="arrow">↗</span>
+    </a>
+    <a class="card" href="https://a.r10.to/hPBl8p" target="_blank" rel="noopener nofollow">
+      <span class="tag tag-rakuten">楽天</span>
+      <div class="card-name">デジタル比重計</div>
+      <div class="card-desc">ハンナ愛用。<br>精度が段違い</div>
+      <span class="arrow">↗</span>
+    </a>
+  </div>
+
+  <!-- 照明・機材 -->
+  <div class="section-label">照明 · 機材</div>
+  <div class="card-grid">
+    <a class="card" href="https://a.r10.to/h5tQQ0" target="_blank" rel="noopener nofollow">
+      <span class="tag tag-rakuten">楽天</span>
+      <div class="card-name">LEDライト</div>
+      <div class="card-desc">現在使用中。<br>サンゴ育成対応</div>
+      <span class="arrow">↗</span>
+    </a>
+    <a class="card" href="https://e-lss.jp/dst/jebao/pfs2.html" target="_blank" rel="noopener">
+      <span class="tag" style="background:#eef3ff;color:#3a5bbf;">公式Shop</span>
+      <div class="card-name">水槽用ポンプ</div>
+      <div class="card-desc">偽物も出回るため<br>公式ショップ推奨</div>
+      <span class="arrow">↗</span>
+    </a>
+    <a class="card" href="https://amzn.to/48lv7Px" target="_blank" rel="noopener nofollow">
+      <span class="tag tag-amazon">Amazon</span>
+      <div class="card-name">循環ポンプ<br><span style="font-size:10px;font-weight:300;color:var(--text-secondary)">東日本（50Hz）</span></div>
+      <div class="card-desc">水流で酸素補給。<br>サンゴに必須</div>
+      <span class="arrow">↗</span>
+    </a>
+    <a class="card" href="https://amzn.to/4bV9IPp" target="_blank" rel="noopener nofollow">
+      <span class="tag tag-amazon">Amazon</span>
+      <div class="card-name">循環ポンプ<br><span style="font-size:10px;font-weight:300;color:var(--text-secondary)">西日本（60Hz）</span></div>
+      <div class="card-desc">水流で酸素補給。<br>サンゴに必須</div>
+      <span class="arrow">↗</span>
+    </a>
+    <a class="card" href="https://a.r10.to/h5bjCz" target="_blank" rel="noopener nofollow">
+      <span class="tag tag-rakuten">楽天</span>
+      <div class="card-name">オーバーフロー水槽</div>
+      <div class="card-desc">私のは中古1万円。<br>形状はこれと同じ</div>
+      <span class="arrow">↗</span>
+    </a>
+    <a class="card" href="https://a.r10.to/h5mvU4" target="_blank" rel="noopener nofollow">
+      <span class="tag tag-rakuten">楽天</span>
+      <div class="card-name">ウールボックス</div>
+      <div class="card-desc">物理ろ過の要。<br>汚れ確認しやすい</div>
+      <span class="arrow">↗</span>
+    </a>
+    <div class="card" style="cursor:default;">
+      <span class="tag" style="background:#f0f0ee;color:#888;margin-bottom:8px;">メルカリ</span>
+      <div class="card-name">塩ビ濾過槽サンプ</div>
+      <div class="card-desc">400×200×350 / 2層式<br>ウールボックス付き<br>新品・¥7,000</div>
     </div>
+  </div>
 
-    <div class="card">
-      <div class="card-header">
-        <div class="card-emoji">🌀</div>
-        <div class="card-info">
-          <h3>プロテインスキマー</h3>
-          <p>海水水槽の要。有機物・泡沫を除去し水質を安定させます。</p>
+  <!-- 冷却・温度管理 -->
+  <div class="section-label">冷却 · 温度管理</div>
+  <div class="card-grid">
+    <a class="card wide" href="https://a.r10.to/hPnGsI" target="_blank" rel="noopener nofollow">
+      <div class="inner">
+        <div class="card-icon-box">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1b8fb5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v20M12 2l-3 3M12 2l3 3"/>
+            <path d="M5.5 7h13M5.5 7l-2 3.5M18.5 7l2 3.5"/>
+            <path d="M3.5 17h17M3.5 17l2-3.5M20.5 17l-2-3.5"/>
+            <circle cx="12" cy="12" r="2.5" fill="#e0f4fb" stroke="#1b8fb5"/>
+          </svg>
         </div>
-      </div>
-      <div class="link-buttons">
-        <a class="btn btn-amazon" href="https://amzn.to/XXXXXXX" target="_blank" rel="noopener nofollow">
-          <span class="btn-logo">Amazon</span>
-        </a>
-        <a class="btn btn-rakuten" href="https://hb.afl.rakuten.co.jp/hgc/XXXXXXX" target="_blank" rel="noopener nofollow">
-          <span class="btn-logo">楽天</span>
-        </a>
-        <a class="btn btn-yahoo" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=XXXXXXX" target="_blank" rel="noopener nofollow">
-          <span class="btn-logo">Yahoo!</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-header">
-        <div class="card-emoji">🔬</div>
-        <div class="card-info">
-          <h3>比重計・屈折計</h3>
-          <p>塩分濃度の管理に。デジタル屈折計が精度高くおすすめ。</p>
+        <div>
+          <span class="tag tag-rakuten">楽天</span>
+          <div class="card-name">水槽用クーラー</div>
+          <div class="card-desc">夏場の水温管理に必須。海水魚・サンゴを守る</div>
         </div>
+        <span style="margin-left:auto;align-self:center;flex-shrink:0;font-size:13px;color:#8aacb8;">↗</span>
       </div>
-      <div class="link-buttons">
-        <a class="btn btn-amazon" href="https://amzn.to/XXXXXXX" target="_blank" rel="noopener nofollow">
-          <span class="btn-logo">Amazon</span>
-        </a>
-        <a class="btn btn-rakuten" href="https://hb.afl.rakuten.co.jp/hgc/XXXXXXX" target="_blank" rel="noopener nofollow">
-          <span class="btn-logo">楽天</span>
-        </a>
-        <a class="btn btn-yahoo" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=XXXXXXX" target="_blank" rel="noopener nofollow">
-          <span class="btn-logo">Yahoo!</span>
-        </a>
-      </div>
-    </div>
+    </a>
+  </div>
 
-    <div class="card">
-      <div class="card-header">
-        <div class="card-emoji">🧂</div>
-        <div class="card-info">
-          <h3>人工海水の素</h3>
-          <p>水換え・立ち上げに必須。ミネラルバランスが大切です。</p>
+  <!-- 生体・サンゴ -->
+  <div class="section-label">生体 · サンゴ</div>
+  <div class="card-grid">
+    <a class="card" href="https://a.r10.to/hPlhRi" target="_blank" rel="noopener nofollow">
+      <span class="tag tag-rakuten">楽天</span>
+      <div class="card-name">ライブロック</div>
+      <div class="card-desc">バクテリアの宿</div>
+      <span class="arrow">↗</span>
+    </a>
+  </div>
+
+  <!-- note記事 -->
+  <div class="section-label">記事を読む</div>
+  <div class="card-grid">
+    <a class="card wide" href="#" style="opacity:0.6;cursor:default;" onclick="return false;">
+      <div class="inner">
+        <div class="card-icon-box">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1b8fb5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="8" y1="13" x2="16" y2="13"/>
+            <line x1="8" y1="17" x2="13" y2="17"/>
+          </svg>
         </div>
-      </div>
-      <div class="link-buttons">
-        <a class="btn btn-amazon" href="https://amzn.to/XXXXXXX" target="_blank" rel="noopener nofollow">
-          <span class="btn-logo">Amazon</span>
-        </a>
-        <a class="btn btn-rakuten" href="https://hb.afl.rakuten.co.jp/hgc/XXXXXXX" target="_blank" rel="noopener nofollow">
-          <span class="btn-logo">楽天</span>
-        </a>
-        <a class="btn btn-yahoo" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=XXXXXXX" target="_blank" rel="noopener nofollow">
-          <span class="btn-logo">Yahoo!</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- ━━━━━━━━━━━━━━━━━━ -->
-    <!-- カテゴリ2：照明・機材    -->
-    <!-- ━━━━━━━━━━━━━━━━━━ -->
-    <div class="category-label">
-      <span class="icon">💡</span>
-      <h2>照明・機材</h2>
-    </div>
-
-    <div class="card">
-      <div class="card-header">
-        <div class="card-emoji">🌊</div>
-        <div class="card-info">
-          <h3>LEDライト（サンゴ用）</h3>
-          <p>サンゴの色揚げ・光合成に対応した高演色LEDライト。</p>
+        <div>
+          <span class="tag tag-note">note</span>
+          <div class="card-name">海水水槽 立ち上げ完全マニュアル Vol.1</div>
+          <div class="card-desc">現在作成中…</div>
         </div>
+        <span style="margin-left:auto;align-self:center;flex-shrink:0;font-size:11px;color:#8aacb8;">準備中</span>
       </div>
-      <div class="link-buttons">
-        <a class="btn btn-amazon" href="https://amzn.to/XXXXXXX" target="_blank" rel="noopener nofollow">
-          <span class="btn-logo">Amazon</span>
-        </a>
-        <a class="btn btn-rakuten" href="https://hb.afl.rakuten.co.jp/hgc/XXXXXXX" target="_blank" rel="noopener nofollow">
-          <span class="btn-logo">楽天</span>
-        </a>
-        <a class="btn btn-yahoo" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=XXXXXXX" target="_blank" rel="noopener nofollow">
-          <span class="btn-logo">Yahoo!</span>
-        </a>
-      </div>
-    </div>
+    </a>
+  </div>
 
-    <div class="card">
-      <div class="card-header">
-        <div class="card-emoji">🌡️</div>
-        <div class="card-info">
-          <h3>クーラー・ヒーター</h3>
-          <p>水温管理は生体維持の基本。サーモスタット一体型が便利。</p>
-        </div>
-      </div>
-      <div class="link-buttons">
-        <a class="btn btn-amazon" href="https://amzn.to/XXXXXXX" target="_blank" rel="noopener nofollow">
-          <span class="btn-logo">Amazon</span>
-        </a>
-        <a class="btn btn-rakuten" href="https://hb.afl.rakuten.co.jp/hgc/XXXXXXX" target="_blank" rel="noopener nofollow">
-          <span class="btn-logo">楽天</span>
-        </a>
-        <a class="btn btn-yahoo" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=XXXXXXX" target="_blank" rel="noopener nofollow">
-          <span class="btn-logo">Yahoo!</span>
-        </a>
-      </div>
-    </div>
+  <!-- フッター -->
+  <p class="footer">
+    ※ リンクにはアフィリエイトリンクが含まれます<br>
+    実際に購入・使用したものだけを紹介しています
+  </p>
 
-    <div class="card">
-      <div class="card-header">
-        <div class="card-emoji">💨</div>
-        <div class="card-info">
-          <h3>波発生装置（サーキュレーター）</h3>
-          <p>自然な水流を再現。サンゴの健康と酸素供給に役立ちます。</p>
-        </div>
-      </div>
-      <div class="link-buttons">
-        <a class="btn btn-amazon" href="https://amzn.to/XXXXXXX" target="_blank" rel="noopener nofollow">
-          <span class="btn-logo">Amazon</span>
-        </a>
-        <a class="btn btn-rakuten" href="https://hb.afl.rakuten.co.jp/hgc/XXXXXXX" target="_blank" rel="noopener nofollow">
-          <span class="btn-logo">楽天</span>
-        </a>
-        <a class="btn btn-yahoo" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=XXXXXXX" target="_blank" rel="noopener nofollow">
-          <span class="btn-logo">Yahoo!</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- ━━━━━━━━━━━━━━━━━━ -->
-    <!-- カテゴリ3：生体・サンゴ  -->
-    <!-- ━━━━━━━━━━━━━━━━━━ -->
-    <div class="category-label">
-      <span class="icon">🪸</span>
-      <h2>生体・サンゴ</h2>
-    </div>
-
-    <div class="card">
-      <div class="card-header">
-        <div class="card-emoji">🪸</div>
-        <div class="card-info">
-          <h3>サンゴ（LPS・SPS）</h3>
-          <p>国内ブリード・輸入サンゴの専門ショップへのリンク集。</p>
-        </div>
-      </div>
-      <div class="link-buttons">
-        <a class="btn btn-amazon" href="https://amzn.to/XXXXXXX" target="_blank" rel="noopener nofollow">
-          <span class="btn-logo">Amazon</span>
-        </a>
-        <a class="btn btn-rakuten" href="https://hb.afl.rakuten.co.jp/hgc/XXXXXXX" target="_blank" rel="noopener nofollow">
-          <span class="btn-logo">楽天</span>
-        </a>
-        <a class="btn btn-yahoo" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=XXXXXXX" target="_blank" rel="noopener nofollow">
-          <span class="btn-logo">Yahoo!</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-header">
-        <div class="card-emoji">🐟</div>
-        <div class="card-info">
-          <h3>海水魚</h3>
-          <p>カクレクマノミ・ヤッコなど人気の海水魚を扱うショップ。</p>
-        </div>
-      </div>
-      <div class="link-buttons">
-        <a class="btn btn-amazon" href="https://amzn.to/XXXXXXX" target="_blank" rel="noopener nofollow">
-          <span class="btn-logo">Amazon</span>
-        </a>
-        <a class="btn btn-rakuten" href="https://hb.afl.rakuten.co.jp/hgc/XXXXXXX" target="_blank" rel="noopener nofollow">
-          <span class="btn-logo">楽天</span>
-        </a>
-        <a class="btn btn-yahoo" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=XXXXXXX" target="_blank" rel="noopener nofollow">
-          <span class="btn-logo">Yahoo!</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-header">
-        <div class="card-emoji">🍽️</div>
-        <div class="card-info">
-          <h3>サンゴ・魚のエサ</h3>
-          <p>冷凍餌・人工飼料・プランクトン。栄養バランスが色揚げに直結。</p>
-        </div>
-      </div>
-      <div class="link-buttons">
-        <a class="btn btn-amazon" href="https://amzn.to/XXXXXXX" target="_blank" rel="noopener nofollow">
-          <span class="btn-logo">Amazon</span>
-        </a>
-        <a class="btn btn-rakuten" href="https://hb.afl.rakuten.co.jp/hgc/XXXXXXX" target="_blank" rel="noopener nofollow">
-          <span class="btn-logo">楽天</span>
-        </a>
-        <a class="btn btn-yahoo" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=XXXXXXX" target="_blank" rel="noopener nofollow">
-          <span class="btn-logo">Yahoo!</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- ━━━━━━━━━━━━━━━━━━ -->
-    <!-- カテゴリ4：note記事      -->
-    <!-- ━━━━━━━━━━━━━━━━━━ -->
-    <div class="category-label">
-      <span class="icon">📝</span>
-      <h2>note記事</h2>
-    </div>
-
-    <div class="card note-card">
-      <div class="card-header">
-        <div class="card-emoji">📖</div>
-        <div class="card-info">
-          <div class="note-badge">無料</div>
-          <h3>海水水槽の始め方【完全ガイド】</h3>
-          <p>機材選びから立ち上げまで。初心者向けに全工程を解説。</p>
-        </div>
-      </div>
-      <div class="link-buttons">
-        <a class="btn btn-note" href="https://note.com/XXXXXXX" target="_blank" rel="noopener">
-          📝 noteで読む（無料）
-        </a>
-      </div>
-    </div>
-
-    <div class="card note-card">
-      <div class="card-header">
-        <div class="card-emoji">💎</div>
-        <div class="card-info">
-          <div class="note-badge">有料</div>
-          <h3>サンゴ色揚げの秘訣【実践編】</h3>
-          <p>照明・水質・栄養素の3要素を詳しく解説した有料記事。</p>
-        </div>
-      </div>
-      <div class="link-buttons">
-        <a class="btn btn-note" href="https://note.com/XXXXXXX" target="_blank" rel="noopener">
-          📝 noteで読む（有料）
-        </a>
-      </div>
-    </div>
-
-    <div class="card note-card">
-      <div class="card-header">
-        <div class="card-emoji">🔧</div>
-        <div class="card-info">
-          <div class="note-badge">無料</div>
-          <h3>プロテインスキマー 選び方まとめ</h3>
-          <p>予算別・水槽サイズ別におすすめモデルを比較紹介。</p>
-        </div>
-      </div>
-      <div class="link-buttons">
-        <a class="btn btn-note" href="https://note.com/XXXXXXX" target="_blank" rel="noopener">
-          📝 noteで読む（無料）
-        </a>
-      </div>
-    </div>
-
-  </div><!-- /container -->
-
-  <footer>
-    <p>© 2026 Marine Links｜当ページはアフィリエイトリンクを含みます</p>
-  </footer>
-
-  <script>
-    // 泡のアニメーション生成
-    (function() {
-      const container = document.getElementById('bubbles');
-      const count = 18;
-      for (let i = 0; i < count; i++) {
-        const b = document.createElement('div');
-        b.className = 'bubble';
-        const size = Math.random() * 30 + 8;
-        b.style.cssText = [
-          'width:' + size + 'px',
-          'height:' + size + 'px',
-          'left:' + Math.random() * 100 + '%',
-          'animation-duration:' + (Math.random() * 12 + 8) + 's',
-          'animation-delay:' + (Math.random() * 10) + 's'
-        ].join(';');
-        container.appendChild(b);
-      }
-    })();
-  </script>
-
+</div>
 </body>
 </html>
