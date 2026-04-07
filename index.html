@@ -27,6 +27,7 @@
       background: var(--bg);
       color: var(--text-primary);
       min-height: 100vh;
+      overflow-x: hidden;
     }
 
     body::before {
@@ -40,6 +41,60 @@
       background: radial-gradient(circle, rgba(27,143,181,0.07) 0%, transparent 70%);
       pointer-events: none;
       z-index: 0;
+    }
+
+    /* 泡コンテナ */
+    .bubbles {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .bubble {
+      position: absolute;
+      bottom: -80px;
+      border-radius: 50%;
+      opacity: 0;
+      animation: floatUp linear infinite;
+    }
+
+    /* 泡の見た目：シャボン玉風 */
+    .bubble::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle at 35% 30%,
+        rgba(255,255,255,0.85) 0%,
+        rgba(180,235,255,0.3) 40%,
+        rgba(100,200,240,0.15) 70%,
+        transparent 100%
+      );
+      border: 1px solid rgba(100, 200, 240, 0.4);
+    }
+
+    /* ハイライト */
+    .bubble::after {
+      content: '';
+      position: absolute;
+      top: 18%;
+      left: 22%;
+      width: 28%;
+      height: 18%;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.7);
+      transform: rotate(-35deg);
+    }
+
+    @keyframes floatUp {
+      0%   { transform: translateY(0)   translateX(0)    scale(0.6); opacity: 0; }
+      5%   { opacity: 0.7; }
+      50%  { transform: translateY(-50vh) translateX(var(--drift)) scale(1); opacity: 0.5; }
+      95%  { opacity: 0.2; }
+      100% { transform: translateY(-105vh) translateX(calc(var(--drift) * 1.5)) scale(0.8); opacity: 0; }
     }
 
     .wrap {
@@ -247,6 +302,10 @@
   </style>
 </head>
 <body>
+
+<!-- 水中泡エフェクト -->
+<div class="bubbles" id="bubbles"></div>
+
 <div class="wrap">
 
   <!-- ヘッダー -->
@@ -422,5 +481,43 @@
   </p>
 
 </div>
+
+<script>
+  (function() {
+    const container = document.getElementById('bubbles');
+    const configs = [
+      { size:12, left:8,  delay:0,   duration:9  },
+      { size:20, left:18, delay:2.5, duration:12 },
+      { size:8,  left:28, delay:5,   duration:8  },
+      { size:16, left:38, delay:1,   duration:11 },
+      { size:24, left:50, delay:3.5, duration:14 },
+      { size:10, left:60, delay:7,   duration:9  },
+      { size:18, left:70, delay:0.5, duration:13 },
+      { size:14, left:80, delay:4,   duration:10 },
+      { size:22, left:90, delay:6,   duration:12 },
+      { size:9,  left:45, delay:8,   duration:8  },
+      { size:15, left:55, delay:2,   duration:11 },
+      { size:11, left:15, delay:9,   duration:9  },
+      { size:19, left:75, delay:1.5, duration:13 },
+      { size:7,  left:33, delay:6.5, duration:7  },
+      { size:13, left:62, delay:4.5, duration:10 },
+    ];
+
+    configs.forEach(function(c) {
+      const b = document.createElement('div');
+      b.className = 'bubble';
+      const drift = (Math.random() * 40 - 20).toFixed(1);
+      b.style.cssText = [
+        'width:'  + c.size + 'px',
+        'height:' + c.size + 'px',
+        'left:'   + c.left + '%',
+        'animation-duration:' + c.duration + 's',
+        'animation-delay:'   + c.delay + 's',
+        '--drift:' + drift + 'px',
+      ].join(';');
+      container.appendChild(b);
+    });
+  })();
+</script>
 </body>
 </html>
