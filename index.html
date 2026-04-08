@@ -114,14 +114,30 @@
     .icon-wrap {
       width: 76px;
       height: 76px;
-      margin: 0 auto 18px;
+      margin: 0 auto 10px;
       border-radius: 50%;
-      background: linear-gradient(145deg, #0e6e8c, #0a3d52);
+      background: transparent;
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
-      box-shadow: 0 8px 32px rgba(14,110,140,0.28);
+      box-shadow: 0 8px 32px rgba(14,110,140,0.22);
+    }
+
+    .icon-img {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .icon-credit {
+      font-size: 10px;
+      color: var(--text-muted);
+      font-weight: 300;
+      letter-spacing: 0.04em;
+      margin-bottom: 14px;
     }
 
     .icon-ring {
@@ -314,26 +330,9 @@
     <div class="icon-wrap">
       <div class="icon-ring"></div>
       <div class="icon-ring icon-ring-2"></div>
-      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M18 32 Q18 24 18 18" stroke="#a8e6ff" stroke-width="2.2" stroke-linecap="round"/>
-        <path d="M18 22 Q13 19 10 14" stroke="#a8e6ff" stroke-width="1.8" stroke-linecap="round"/>
-        <path d="M10 14 Q8 10 9 6"    stroke="#a8e6ff" stroke-width="1.5" stroke-linecap="round"/>
-        <path d="M10 14 Q6 13 4 10"   stroke="#a8e6ff" stroke-width="1.3" stroke-linecap="round"/>
-        <path d="M18 20 Q23 17 26 12" stroke="#a8e6ff" stroke-width="1.8" stroke-linecap="round"/>
-        <path d="M26 12 Q28 8 27 4"   stroke="#a8e6ff" stroke-width="1.5" stroke-linecap="round"/>
-        <path d="M26 12 Q30 11 32 8"  stroke="#a8e6ff" stroke-width="1.3" stroke-linecap="round"/>
-        <path d="M18 18 Q18 13 18 8"  stroke="#a8e6ff" stroke-width="1.5" stroke-linecap="round"/>
-        <path d="M18 12 Q15 9 14 5"   stroke="#a8e6ff" stroke-width="1.2" stroke-linecap="round"/>
-        <path d="M18 12 Q21 9 22 5"   stroke="#a8e6ff" stroke-width="1.2" stroke-linecap="round"/>
-        <circle cx="9"  cy="6"  r="1.6" fill="#a8e6ff" opacity="0.9"/>
-        <circle cx="4"  cy="10" r="1.3" fill="#a8e6ff" opacity="0.7"/>
-        <circle cx="27" cy="4"  r="1.6" fill="#a8e6ff" opacity="0.9"/>
-        <circle cx="32" cy="8"  r="1.3" fill="#a8e6ff" opacity="0.7"/>
-        <circle cx="18" cy="8"  r="1.6" fill="#a8e6ff" opacity="0.9"/>
-        <circle cx="14" cy="5"  r="1.2" fill="#a8e6ff" opacity="0.7"/>
-        <circle cx="22" cy="5"  r="1.2" fill="#a8e6ff" opacity="0.7"/>
-      </svg>
+      <img src="affiliate/icon.jpg" alt="ぽんず水槽アイコン" class="icon-img">
     </div>
+    <p class="icon-credit">illust: @kumaquarium</p>
     <h1 class="hero-title">ぽんずの<em>愛用アイテム</em></h1>
     <p class="hero-sub">30cm オーバーフロー水槽 ／ 8ヶ月目突入</p>
   </div>
